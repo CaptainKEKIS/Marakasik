@@ -32,7 +32,7 @@ namespace Lab1_WPF
             //вызываем функцию для проверки:
 	        bool result = DateFunctions.IsLeapYear( year );
 	        //показываем сообщение пользователю:
-	        MessageBox.Show( result ? "Високосный" : "Не високосный"); 
+	        MessageBox.Show( result ? "366" : "365"); 
 
         }
     }
