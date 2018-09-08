@@ -14,7 +14,7 @@
         <Grid.ColumnDefinitions>
             <ColumnDefinition></ColumnDefinition>
         </Grid.ColumnDefinitions>
-        <TextBox Grid.Row="0" Grid.Column="0" x:Name="TextBox1" />
+        <TextBox Grid.Row="0" Grid.Column="0" x:Name="textBox1" />
         <Button Grid.Row="1" Grid.Column="0" x:Name="button1" Content="Нажать" Click="Button_Click" />
     </Grid>
 </Window>
