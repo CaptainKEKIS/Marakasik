@@ -27,6 +27,12 @@ namespace Lab1_WPF
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
+            //берем значение из текстбокса и конвертируем его в число:
+            int year = Convert.ToInt32( TextBox1.Text );
+            //вызываем функцию для проверки:
+	        bool result = DateFunctions.IsLeapYear( year );
+	        //показываем сообщение пользователю:
+	        MessageBox.Show( result ? "Високосный" : "Не високосный"); 
 
         }
     }
