@@ -9,8 +9,11 @@ namespace Lab1_WPF
     {
         public static bool IsLeapYear(int year)
         {
-            //какие-то расчеты
-            return true; //true - если год високосный, иначе false
+            if (year % 4 == 0)
+            {
+                return true; //true - если год високосный, иначе false
+            }
+            return false;
         }
 
     }
