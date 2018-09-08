@@ -11,7 +11,14 @@ namespace Lab1_WPF
         {
             if (year % 4 == 0)
             {
-                return true; //true - если год високосный, иначе false
+                if (year % 400 != 0 && year % 100 == 0)
+                {
+                    return false;
+                }
+                else
+                {
+                    return true;
+                }
             }
             return false;
         }
