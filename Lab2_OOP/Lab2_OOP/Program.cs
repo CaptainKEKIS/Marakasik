@@ -10,8 +10,22 @@ namespace Lab2_OOP
 
     class Program
     {
+        class A
+        {
+            string B = "fdjdskjhfkjhfksjhfkj";
+            public string this[int num, string kshgj]
+            {
+                get{ return  kshgj + B[num]; }
+                set { Console.WriteLine(value); }
+            }
+        }
         static void Main(string[] args)
         {
+            A a = new A();
+            var bbb = a[3,"fkjhdskjhgf"];
+            Console.WriteLine(bbb);
+            a[3, "fkjhdskjhgf"] = "1111111111111111111111";
+
             Person p = new Person();
             Console.WriteLine(p.Name);
             p.Name = "Vasja";
