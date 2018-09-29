@@ -10,19 +10,29 @@ namespace Lab2_OOP
 
     class Program
     {
+        static void func(params string[] str)
+        {
+            foreach (var s in str)
+                Console.WriteLine(s);
+        }
+        /*
         class A
         {
             string B = "fdjdskjhfkjhfksjhfkj";
             public string this[int num, string kshgj]
             {
-                get{ return  kshgj + B[num]; }
+                get { return kshgj + B[num]; }
                 set { Console.WriteLine(value); }
             }
         }
+        */
+
         static void Main(string[] args)
         {
+            /*
+            func("fsafsd", "fdsafsda"); func(new []{"fsdhfjhsdjkhfd","111!"});
             A a = new A();
-            var bbb = a[3,"fkjhdskjhgf"];
+            var bbb = a[3, "fkjhdskjhgf"];
             Console.WriteLine(bbb);
             a[3, "fkjhdskjhgf"] = "1111111111111111111111";
 
@@ -33,6 +43,14 @@ namespace Lab2_OOP
 
             Exam e = new Exam();
             Console.WriteLine(e);
+            */
+
+            DateTime Birthday = new DateTime(1990, 8, 20);
+            Person p = new Person("Vasya", "Ivanov", Birthday);
+            Console.WriteLine(p.ToString());
+            Student student = new Student(p, Education.Bachelor, 0112003);
+            Console.WriteLine(student.ToShortString());
+            Console.WriteLine(student[Education.Specialist]);
         }
     }
 }

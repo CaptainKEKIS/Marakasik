@@ -15,7 +15,7 @@ namespace Lab2_OOP
         {
             _name = "";
             _secondName = "";
-            _birthday = DateTime.Now;
+            _birthday = DateTime.Today;
         }
 
         public Person(string Name, string SecondName, DateTime Birthday)
@@ -41,18 +41,27 @@ namespace Lab2_OOP
 
             }
         }
-        public string SecondName { get; set; }
-        public DateTime Birthday { get; set; }
+        public string SecondName
+        {
+            get { return _secondName; }
+            set { _secondName = value; }
+        }
+        public DateTime Birthday
+        {
+            get { return _birthday; }
+            set { _birthday = value; }
+        }
         //public int PutIn { get; set; }
-        public int GetSetBirthday {get; set;}
+        public int GetSetBirthday { get; set; }
 
         public override string ToString()
         {
-            return _name + " " + _secondName + " " + _birthday;
+            return Name + " " + SecondName + " " + Birthday;
         }
 
-        public virtual string ToShortString() {
-            return _name + " " + _secondName;
+        public virtual string ToShortString()
+        {
+            return Name + " " + SecondName;
         }
     }
 }

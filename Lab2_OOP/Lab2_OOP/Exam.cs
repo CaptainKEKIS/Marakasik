@@ -15,7 +15,7 @@ namespace Lab2_OOP
         {
             Discipline = "";
             Score = 0;
-            Date = DateTime.Now;
+            Date = DateTime.Today;
         }
 
         public Exam(string Discipline, int Mark, DateTime Date)
