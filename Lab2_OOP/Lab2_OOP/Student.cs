@@ -10,14 +10,13 @@ namespace Lab2_OOP
         private Person _person;
         private Education _formOfTraining;
         private int _groupNumber;
-        private Exam[] _passedExams;
+        private Exam[] _passedExams=new Exam[0];
 
         public Student()
         {
             _person = new Person();
             _formOfTraining = Education.Bachelor;
             _groupNumber = 0;
-            _passedExams = new Exam[0];
         }
 
         public Student(Person Person, Education FormOfTraining, int GroupNumber)
@@ -59,20 +58,28 @@ namespace Lab2_OOP
         {
             get
             {
-                if (this.FormOfTraining == FormOfTraining)
-                {
-                    return true;
-                }
-                return false;
+                return this.FormOfTraining == FormOfTraining;
             }
         }
 
-        void AddExams(params Exam[] Exams)
+        public void AddExams(params Exam[] Exams)
         {
-            foreach (var e in Exams)
-            {
+            Exam[] Passed = new Exam[_passedExams.Length + Exams.Length];
 
+            Array.Copy(_passedExams, Passed, _passedExams.Length);
+            Array.Copy(Exams, 0, Passed, _passedExams.Length, Exams.Length);
+
+            /*int i = 0;
+            for (int j = 0; j < _passedExams.Length; j++) {
+                Passed[i] = _passedExams[j];
+                i++;
             }
+            for (int j = 0; j < Exams.Length; j++) {
+                Passed[i] = Exams[j];
+                i++;
+            }*/
+            _passedExams = Passed;
+            
         }
 
         public override string ToString()

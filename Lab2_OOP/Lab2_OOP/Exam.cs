@@ -18,10 +18,10 @@ namespace Lab2_OOP
             Date = DateTime.Today;
         }
 
-        public Exam(string Discipline, int Mark, DateTime Date)
+        public Exam(string Discipline, int Score, DateTime Date)
         {
             this.Discipline = Discipline;
-            this.Score = Mark;
+            this.Score = Score;
             this.Date = Date;
         }
 
