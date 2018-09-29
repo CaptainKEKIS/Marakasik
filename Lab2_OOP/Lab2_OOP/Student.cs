@@ -10,7 +10,7 @@ namespace Lab2_OOP
         private Person _person;
         private Education _formOfTraining;
         private int _groupNumber;
-        private Exam[] _passedExams=new Exam[0];
+        private Exam[] _passedExams = new Exam[0];
 
         public Student()
         {
@@ -79,7 +79,7 @@ namespace Lab2_OOP
                 i++;
             }*/
             _passedExams = Passed;
-            
+
         }
 
         public override string ToString()
@@ -87,15 +87,23 @@ namespace Lab2_OOP
             string result = _person + " " + _formOfTraining + " " + _groupNumber;
             for (int i = 0; i < _passedExams.Length; i++)
             {
-                result += " " + _passedExams[i];
+                result += Environment.NewLine + _passedExams[i];
             }
+            //todo: добавить вывод строки список сданных экз или указать, что экз.не сдавались
             return result;
         }
 
         public virtual string ToShortString()
         {
-            return Person + " " + FormOfTraining + " " + GroupNumber + " "; // DABAVIT SREDNIY BALL
+            float AvgScore = 0;
+            int ScoreSum = 0;
+            for (int i = 0; i < _passedExams.Length; i++)
+            {
+                ScoreSum += _passedExams[i].Score;
+            }
+            AvgScore = ScoreSum / _passedExams.Length;
+            //TODO: Перенести выше в AvgScore
+            return String.Format( "{0} Форма обучения: {1} Номер группы: {2] Средний балл: {3}", Person, FormOfTraining, GroupNumber, AvgScore);
         }
-
     }
 }

@@ -27,7 +27,7 @@ namespace Lab2_OOP
 
         public override string ToString()
         {
-            return Discipline + " " + Score + " " + Date;
+            return Discipline + " " + Score + " " + Date.ToString("dd.MM.yyyy");
         }
     }
 }
