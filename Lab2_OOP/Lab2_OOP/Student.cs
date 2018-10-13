@@ -51,7 +51,14 @@ namespace Lab2_OOP
         {
             get
             {
-                return 1 / 1;
+                float AvgScore = 0;
+                int ScoreSum = 0;
+                for (int i = 0; i < _passedExams.Length; i++)
+                {
+                    ScoreSum += _passedExams[i].Score;
+                }
+                AvgScore = ScoreSum / _passedExams.Length;
+                return AvgScore;
             }
         }
         public bool this[Education FormOfTraining]
@@ -95,15 +102,8 @@ namespace Lab2_OOP
 
         public virtual string ToShortString()
         {
-            float AvgScore = 0;
-            int ScoreSum = 0;
-            for (int i = 0; i < _passedExams.Length; i++)
-            {
-                ScoreSum += _passedExams[i].Score;
-            }
-            AvgScore = ScoreSum / _passedExams.Length;
             //TODO: Перенести выше в AvgScore
-            return String.Format( "{0} Форма обучения: {1} Номер группы: {2] Средний балл: {3}", Person, FormOfTraining, GroupNumber, AvgScore);
+            return String.Format("{0} Форма обучения: {1} Номер группы: {2} Средний балл: {3}", Person, FormOfTraining, GroupNumber, AvgScore);
         }
     }
 }

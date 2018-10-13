@@ -46,7 +46,7 @@ namespace Lab2_OOP
 
 
             ////////////
-            int n = 3;
+            int n = 4;
             Exam[] e = new Exam[n];
             string Discipline;
             int Score = 0;
