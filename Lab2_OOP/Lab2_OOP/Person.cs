@@ -56,7 +56,7 @@ namespace Lab2_OOP
 
         public override string ToString()
         {
-            return Name + " " + SecondName + " " + Birthday;
+            return Name + " " + SecondName + " " + Birthday.ToString("dd.MM.yyyy");
         }
 
         public virtual string ToShortString()

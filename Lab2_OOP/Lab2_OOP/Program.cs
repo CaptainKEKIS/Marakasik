@@ -67,11 +67,10 @@ namespace Lab2_OOP
 
             DateTime Birthday = new DateTime(1990, 8, 20);
             Person p = new Person("Vasya", "Ivanov", Birthday);
-            Student student = new Student(p, Education.Bachelor, 0112003);
+            Student student = new Student(p, Education.Bachelor, "0112003");
             Console.WriteLine(student[Education.Specialist]);
             student.AddExams(e);
-            student.AddExams(e);
-            Console.WriteLine(student.ToShortString());
+            Console.WriteLine(student.ToString());
         }
     }
 }

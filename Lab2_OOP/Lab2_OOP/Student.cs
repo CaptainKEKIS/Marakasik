@@ -9,17 +9,17 @@ namespace Lab2_OOP
     {
         private Person _person;
         private Education _formOfTraining;
-        private int _groupNumber;
+        private string _groupNumber;
         private Exam[] _passedExams = new Exam[0];
 
         public Student()
         {
             _person = new Person();
             _formOfTraining = Education.Bachelor;
-            _groupNumber = 0;
+            _groupNumber = "0";
         }
 
-        public Student(Person Person, Education FormOfTraining, int GroupNumber)
+        public Student(Person Person, Education FormOfTraining, string GroupNumber)
         {
             _person = Person;
             _formOfTraining = FormOfTraining;
@@ -36,7 +36,7 @@ namespace Lab2_OOP
             get { return _formOfTraining; }
             set { _formOfTraining = value; }
         }
-        public int GroupNumber
+        public string GroupNumber
         {
             get { return _groupNumber; }
             set { _groupNumber = value; }
@@ -88,21 +88,27 @@ namespace Lab2_OOP
             _passedExams = Passed;
 
         }
-
+        
         public override string ToString()
         {
-            string result = _person + " " + _formOfTraining + " " + _groupNumber;
-            for (int i = 0; i < _passedExams.Length; i++)
+            string result = String.Format("Студент: {0}" + Environment.NewLine + "Форма обучения: {1}" + Environment.NewLine + "Номер группы: {2}", _person, _formOfTraining, _groupNumber);
+            result += Environment.NewLine + "Сданные экзамены:";
+            if (_passedExams.Length != 0)
             {
-                result += Environment.NewLine + _passedExams[i];
+                for (int i = 0; i < _passedExams.Length; i++)
+                {
+                    result += Environment.NewLine + "\t" + (i + 1) + ")" + _passedExams[i];
+                }
             }
-            //todo: добавить вывод строки список сданных экз или указать, что экз.не сдавались
+            else
+            {
+                result += Environment.NewLine + "\tСданных экзаменов нет!";
+            }
             return result;
         }
 
         public virtual string ToShortString()
         {
-            //TODO: Перенести выше в AvgScore
             return String.Format("{0} Форма обучения: {1} Номер группы: {2} Средний балл: {3}", Person, FormOfTraining, GroupNumber, AvgScore);
         }
     }
